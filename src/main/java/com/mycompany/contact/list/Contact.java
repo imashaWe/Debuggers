@@ -10,5 +10,7 @@ package com.mycompany.contact.list;
  * @author IMASHA
  */
 public class Contact {
+    public String name;
+    public String phoneNo;
     
 }
