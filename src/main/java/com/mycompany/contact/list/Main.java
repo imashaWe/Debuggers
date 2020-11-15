@@ -61,7 +61,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter name:");
         String name = scanner.nextLine();
-        System.out.println("Please enter name:");
+        System.out.println("Please enter phone:");
         String phoneNo = scanner.nextLine();
         contactList.addContact(name, phoneNo);
         
@@ -79,7 +79,7 @@ public class Main {
         ArrayList<Contact> contacts = contactList.DisplayConatct();
         int index = -1;
         for (int i = 0; i < contacts.size(); i++) {
-            if (name == contacts.get(i).name) {
+            if (name.equals(contacts.get(i).name)) {
                 index = i;
                 break;
             }
@@ -102,8 +102,7 @@ public class Main {
         ArrayList<Contact> contacts = contactList.DisplayConatct();
         int index = -1;
         for (int i = 0; i < contacts.size(); i++) {
-            System.out.println(contacts.get(i).name);
-            if (name == contacts.get(i).name) {
+            if (name.equals(contacts.get(i).name)) {
                 index = i;
                 break;
             }

@@ -25,6 +25,7 @@ public class ContactList {
     }
     
     public void editConatct(int index,String name,String phoneNo ) {
+        System.out.println(index);
          Contact contact = new Contact();
          contact.name = name;
          contact.phoneNo = phoneNo;
