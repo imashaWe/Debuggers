@@ -52,12 +52,16 @@ public class ContactList {
                      String phoneNO = (String) obj.get("phoneNo");
                      addContact(name,phoneNO);
             }
+            System.out.println("save success!");
  
+        } else {
+            System.out.println("No contacts to load!");
         }
     }
     
     public void saveConatcts() {
         Storage storage = new Storage();
         storage.insertAll(contacts);
+        System.out.println("save success!");
     }
 }

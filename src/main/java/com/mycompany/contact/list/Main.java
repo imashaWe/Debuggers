@@ -26,30 +26,17 @@ public class Main {
                     "• Enter 5 to load contacts from a text file.\n" +
                     "• Enter 6 to save contacts to the text file.\n" +
                     "• Enter 7 to exit from the program");
-            int input = scanner.nextInt();
+            String input = scanner.nextLine();
             
             switch (input) {
-                case 1:
-                    showDisplayContact(contactList);
-                    break;
-                case 2:
-                    showAddContact(contactList);
-                    break;
-                case 3:
-                    showDeleteContact(contactList);
-                    break;
-                case 4:
-                    showEditContact(contactList);
-                    break;
-                case 5:
-                    contactList.loadConatcts();
-                    break;
-                case 6:
-                    contactList.saveConatcts();
-                    break;
-                case 7:
-                    isRunning = false;
-                    break;
+                case "1" -> showDisplayContact(contactList);
+                case "2" -> showAddContact(contactList);
+                case "3" -> showDeleteContact(contactList);
+                case "4" -> showEditContact(contactList);
+                case "5" -> contactList.loadConatcts();
+                case "6" -> contactList.saveConatcts();
+                case "7" -> isRunning = false;
+                default -> System.out.println("Invalid option!");
                     
             }
          }
