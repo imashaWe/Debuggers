@@ -107,9 +107,8 @@ public class Main {
                 break;
             }
         }
-        if (index != -1) {
-             contactList.deleteContact(index);
-             System.out.println("“Please enter the new phone numbe:");
+        if (index != -1) {;
+             System.out.println("Please enter the new phone numbe:");
              String phoneNo = scanner.nextLine();
              contactList.editConatct(index,name,phoneNo);
              System.out.println("Edit success!");

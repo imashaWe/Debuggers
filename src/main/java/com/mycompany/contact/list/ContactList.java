@@ -25,11 +25,13 @@ public class ContactList {
     }
     
     public void editConatct(int index,String name,String phoneNo ) {
-        System.out.println(index);
-         Contact contact = new Contact();
-         contact.name = name;
-         contact.phoneNo = phoneNo;
-         contacts.set(index, contact);
+ 
+  System.out.println(index);
+        Contact contact = new Contact();
+        contact.name = name;
+        contact.phoneNo = phoneNo;
+        System.out.println(contacts.size());
+        contacts.set(index, contact);
     }
     
     public ArrayList<Contact> DisplayConatct() {
