@@ -5,6 +5,9 @@
  */
 package com.mycompany.contact.list;
 import java.util.ArrayList; 
+import java.util.Iterator;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 /**
  *
@@ -26,7 +29,6 @@ public class ContactList {
     
     public void editConatct(int index,String name,String phoneNo ) {
  
-  System.out.println(index);
         Contact contact = new Contact();
         contact.name = name;
         contact.phoneNo = phoneNo;
@@ -39,10 +41,23 @@ public class ContactList {
     }
     
     public void loadConatcts() {
-        
+        Storage storage = new Storage();
+        JSONArray localContacts = storage.getAll();
+        if (localContacts != null) {
+            JSONObject obj;
+            Iterator<JSONObject> iterator = localContacts.iterator();
+            while (iterator.hasNext()) {
+                     obj = iterator.next();
+                     String name = (String) obj.get("name");
+                     String phoneNO = (String) obj.get("phoneNo");
+                     addContact(name,phoneNO);
+            }
+ 
+        }
     }
     
     public void saveConatcts() {
-        
+        Storage storage = new Storage();
+        storage.insertAll(contacts);
     }
 }

@@ -42,13 +42,12 @@ public class Main {
                     showEditContact(contactList);
                     break;
                 case 5:
-                    showAddContact(contactList);
+                    contactList.loadConatcts();
                     break;
                 case 6:
-                    showAddContact(contactList);
+                    contactList.saveConatcts();
                     break;
                 case 7:
-                    showAddContact(contactList);
                     isRunning = false;
                     break;
                     
