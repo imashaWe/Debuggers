@@ -10,7 +10,23 @@ package com.mycompany.contact.list;
  * @author IMASHA
  */
 public class Contact {
-    public String name;
-    public String phoneNo;
+    private String name;
+    private String phoneNo;
+    
+    public String getName() {
+        return this.name;
+    }
+    
+    public String getphoneNo() {
+        return this.phoneNo;
+    }
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    public void setPhoneNo(String phone) {
+        this.phoneNo = phone;
+    }
     
 }

@@ -25,50 +25,6 @@ public class Storage {
         jsondb = new JSONObject();
     }
     
-   //public class StudentBase {
-    
-
-//    StudentBase() {
-//        jsondb = new JSONObject();
-//    }
-//
-//    public void addStudent(Student student) {
-//        JSONObject row = new JSONObject();
-//        JSONObject table = new JSONObject();
-//        JSONArray students = getStudentArray();
-//
-//        row.put("name", student.name);
-//        row.put("email", student.email);
-//        row.put("nic", student.nic);
-//        row.put("isFemail", student.isFemail);
-//
-//        students.add(row);
-//        table.put("students",students);
-//
-//        try (FileWriter file = new FileWriter("test.json")) {
-//            file.write(table.toJSONString());
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-//
-//    public ArrayList<Student> getAll() {
-//        JSONObject obj;
-//        ArrayList students = new ArrayList();
-//        Student student = new Student();
-//        JSONArray result = getStudentArray();
-//        Iterator<JSONObject> iterator = result.iterator();
-//        while (iterator.hasNext()) {
-//                 obj = iterator.next();
-//                student.name = (String) obj.get("name");
-//                student.email = (String) obj.get("email");
-//                student.nic = (String) obj.get("nic");
-//                student.isFemail = (boolean) obj.get("isFemail");
-//                students.add(student);
-//        }
-//        return students;
-//    }
-//
     public JSONArray getAll() {
         JSONParser parser = new JSONParser();
 
@@ -93,8 +49,8 @@ public class Storage {
         
         for (Contact contact:contactList) {
             JSONObject row = new JSONObject();
-            row.put("name",contact.name);
-            row.put("phoneNo",contact.phoneNo);
+            row.put("name",contact.getName());
+            row.put("phoneNo",contact.getphoneNo());
             recoads.add(row);
             
         } 

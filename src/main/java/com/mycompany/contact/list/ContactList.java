@@ -18,8 +18,8 @@ public class ContactList {
     
     public void addContact(String name,String phoneNo) {
         Contact contact = new Contact();
-        contact.name = name;
-        contact.phoneNo = phoneNo;
+        contact.setName(name);
+        contact.setPhoneNo(phoneNo);
         contacts.add(contact);
     }
     
@@ -28,10 +28,9 @@ public class ContactList {
     }
     
     public void editConatct(int index,String name,String phoneNo ) {
- 
         Contact contact = new Contact();
-        contact.name = name;
-        contact.phoneNo = phoneNo;
+        contact.setName(name);
+        contact.setPhoneNo(phoneNo);
         System.out.println(contacts.size());
         contacts.set(index, contact);
     }

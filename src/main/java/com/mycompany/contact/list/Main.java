@@ -17,7 +17,8 @@ public class Main {
         ContactList contactList = new ContactList();
         Scanner scanner = new Scanner(System.in);
         boolean isRunning = true;
-         while (isRunning) {
+        System.out.println("\t\tContact Managemnt System");
+        while (isRunning) {
             System.out.println("Select an Option\n" +
                     "• Enter 1 to display all contacts\n" +
                     "• Enter 2 to add contact\n" +
@@ -47,25 +48,32 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter name:");
         String name = scanner.nextLine();
-        System.out.println("Please enter phone:");
+        System.out.println("Please enter phone number:");
         String phoneNo = scanner.nextLine();
         contactList.addContact(name, phoneNo);
+        System.out.println("Add success!");
         
     }
     private static void showDisplayContact(ContactList contactList) {
-        for (Contact contact:contactList.DisplayConatct()) {
-            System.out.println(contact.name + " " + contact.phoneNo);
-        } 
+        ArrayList<Contact> contacts = contactList.DisplayConatct();
+        if (contacts.size() > 0) {
+            for (Contact contact:contacts) {
+                System.out.println(contact.getName() + " " + contact.getphoneNo());
+            } 
+        
+        } else {
+            System.out.println("No contacts!");
+        }
     }
     
     private static void showDeleteContact(ContactList contactList) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter name of the contact that you want to delete");
+        System.out.println("Please enter name of the contact that you want to delete:");
         String name = scanner.nextLine();
         ArrayList<Contact> contacts = contactList.DisplayConatct();
         int index = -1;
         for (int i = 0; i < contacts.size(); i++) {
-            if (name.equals(contacts.get(i).name)) {
+            if (name.equals(contacts.get(i).getName())) {
                 index = i;
                 break;
             }
@@ -74,7 +82,7 @@ public class Main {
             contactList.deleteContact(index);
              System.out.println("Delete success!");
         }else {
-             System.out.println("---");
+             System.out.println("No matting contact!");
         }
         
     }
@@ -82,24 +90,24 @@ public class Main {
     
     private static void showEditContact(ContactList contactList) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter name of the contact that you want to change");
+        System.out.println("Please enter name of the contact that you want to change:");
         String name = scanner.nextLine();
        
         ArrayList<Contact> contacts = contactList.DisplayConatct();
         int index = -1;
         for (int i = 0; i < contacts.size(); i++) {
-            if (name.equals(contacts.get(i).name)) {
+            if (name.equals(contacts.get(i).getName())) {
                 index = i;
                 break;
             }
         }
-        if (index != -1) {;
+        if (index != -1) {
              System.out.println("Please enter the new phone numbe:");
              String phoneNo = scanner.nextLine();
              contactList.editConatct(index,name,phoneNo);
              System.out.println("Edit success!");
         } else {
-             System.out.println("---");
+             System.out.println("No matting contact!");
         }
         
     }
