@@ -82,7 +82,7 @@ public class Main {
             contactList.deleteContact(index);
              System.out.println("Delete success!");
         }else {
-             System.out.println("No matting contact!");
+             System.out.println("No matching contact!");
         }
         
     }
@@ -102,12 +102,12 @@ public class Main {
             }
         }
         if (index != -1) {
-             System.out.println("Please enter the new phone numbe:");
+             System.out.println("Please enter the new phone number:");
              String phoneNo = scanner.nextLine();
              contactList.editConatct(index,name,phoneNo);
              System.out.println("Edit success!");
         } else {
-             System.out.println("No matting contact!");
+             System.out.println("No matching contact!");
         }
         
     }
