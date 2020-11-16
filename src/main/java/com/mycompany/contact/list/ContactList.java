@@ -51,7 +51,7 @@ public class ContactList {
                      String phoneNO = (String) obj.get("phoneNo");
                      addContact(name,phoneNO);
             }
-            System.out.println("save success!");
+            System.out.println("load success!");
  
         } else {
             System.out.println("No contacts to load!");
@@ -61,6 +61,6 @@ public class ContactList {
     public void saveConatcts() {
         Storage storage = new Storage();
         storage.insertAll(contacts);
-        System.out.println("save success!");
+        System.out.println("save  success!");
     }
 }
